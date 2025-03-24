@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dil Ayarları</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    
+    .settings-container {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .setting-group {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .setting-group:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .setting-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background-color: #fff;
+      margin-bottom: 15px;
+    }
+    
+    .note {
+      font-size: 0.9em;
+      color: #7f8c8d;
+      margin-top: 15px;
+      font-style: italic;
+    }
+    
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+    
+    button {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+    
+    .save-btn {
+      background-color: #2ecc71;
+      color: white;
+      margin-left: 10px;
+    }
+    
+    .save-btn:hover {
+      background-color: #27ae60;
+    }
+    
+    .cancel-btn {
+      background-color: #e74c3c;
+      color: white;
+    }
+    
+    .cancel-btn:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <div class="settings-container">
+    <h1 id="language-title">Dil Ayarları</h1>
+    
+    <div class="setting-group">
+      <div class="setting-title" id="language-select-label">Dil Seçin</div>
+      
+      <select id="language-select">
+        <!-- JS tarafından doldurulacak -->
+      </select>
+      
+      <div class="note" id="language-note">
+        Değişikliklerin tam olarak uygulanması için uygulamayı yeniden başlatmanız gerekebilir.
+      </div>
+    </div>
+    
+    <div class="buttons">
+      <button class="cancel-btn" id="cancel-btn">İptal</button>
+      <button class="save-btn" id="save-btn">Kaydet</button>
+    </div>
+  </div>
+  
+  <script>
+    const { ipcRenderer } = require('electron');
+    
+    // Form elementleri
+    const languageSelect = document.getElementById('language-select');
+    const languageTitle = document.getElementById('language-title');
+    const languageSelectLabel = document.getElementById('language-select-label');
+    const languageNote = document.getElementById('language-note');
+    const cancelBtn = document.getElementById('cancel-btn');
+    const saveBtn = document.getElementById('save-btn');
+    
+    // Ana süreçten dil yapılandırmasını al
+    ipcRenderer.send('get-language-config');
+    
+    // Dil listesi geldiğinde
+    ipcRenderer.on('language-list', (event, { languages, currentLanguage, translations }) => {
+      // Dil seçeneklerini doldur
+      languageSelect.innerHTML = '';
+      languages.forEach(lang => {
+        const option = document.createElement('option');
+        option.value = lang.code;
+        option.textContent = lang.name;
+        languageSelect.appendChild(option);
+      });
+      
+      // Mevcut dili seç
+      languageSelect.value = currentLanguage;
+      
+      // Arayüz metinlerini güncelle
+      updateUIText(translations);
+    });
+    
+    // Arayüz metinlerini güncelle
+    function updateUIText(translations) {
+      languageTitle.textContent = translations.title;
+      languageSelectLabel.textContent = translations.selectLanguage;
+      languageNote.textContent = translations.restart;
+      cancelBtn.textContent = translations.cancel;
+      saveBtn.textContent = translations.save;
+      
+      // Form başlığını güncelle
+      document.title = translations.title;
+    }
+    
+    // İptal butonu
+    cancelBtn.addEventListener('click', () => {
+      window.close();
+    });
+    
+    // Kaydet butonu
+    saveBtn.addEventListener('click', () => {
+      const selectedLanguage = languageSelect.value;
+      ipcRenderer.send('change-language', selectedLanguage);
+      // Dil değişikliği işlemi sırasında bekleyelim, ana pencere yeniden yüklenecek
+      setTimeout(() => {
+        window.close();
+      }, 500);
+    });
+  </script>
+</body>
+</html> 

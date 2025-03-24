@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MultiCopier Hakkında</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+      text-align: center;
+    }
+    
+    .about-container {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 5px;
+    }
+    
+    .version {
+      color: #7f8c8d;
+      margin-bottom: 20px;
+    }
+    
+    .description {
+      text-align: left;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    
+    .footer {
+      font-size: 0.9em;
+      color: #7f8c8d;
+      margin-top: 20px;
+    }
+    
+    .close-btn {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    
+    .close-btn:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="about-container">
+    <img src="../assets/icon.png" alt="MultiCopier Logo" width="64" height="64" style="margin-bottom: 15px;">
+    <h1>MultiCopier</h1>
+    <div class="app-description">Çoklu Kopyalama Aracı</div>
+    <div class="version-label"><span>Sürüm</span>: <span>1.0.0</span></div>
+    <div class="author-label"><span>Geliştirici</span>: <span>MultiCopier Team</span></div>
+    
+    <div class="description">
+      <div class="about-section-title">Hakkında</div>
+      <div class="about-section-content">
+        <p>MultiCopier, birden fazla metni hafızada tutup, kısayol tuşları ile hızlıca erişmenizi sağlayan modern bir çoklu kopyalama masaüstü uygulamasıdır.</p>
+        
+        <p>Kısayol tuşlarını kullanarak metinleri kopyalayabilir, sabitleyebilir ve istediğiniz zaman yapıştırabilirsiniz.</p>
+      </div>
+    </div>
+    
+    <button id="close-btn" class="close-btn" onclick="window.close()">Kapat</button>
+    
+    <div class="footer">
+      <div class="copyright">&copy; 2025 MultiCopier</div>
+      <div class="license">MIT lisansı altında dağıtılmaktadır.</div>
+      <div class="social-links" style="margin-top: 10px;">
+        <a href="https://github.com/BurakSekmenn" target="_blank" style="text-decoration: none; margin: 0 5px; color: #333;">
+          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="24" height="24" style="vertical-align: middle;">
+          GitHub
+        </a>
+        <a href="https://buraksekmenn.github.io/" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: var(--primary-color); padding: 8px 15px; border-radius: 4px; background-color: var(--hover-color); transition: all 0.2s;">
+          <img src="https://www.svgrepo.com/show/229032/internet.svg" alt="LinkedIn" width="24" height="24" style="margin-right: 8px;">
+          <span>Burak Sekmen</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <script src="about-i18n.js"></script>
+</body>
+</html> 

@@ -1,0 +1,112 @@
+{
+  "app": {
+    "title": "MultiCopier",
+    "description": "Modern multiple clipboard application"
+  },
+  "menu": {
+    "file": "File",
+    "exit": "Exit",
+    "edit": "Edit",
+    "cut": "Cut",
+    "copy": "Copy",
+    "paste": "Paste",
+    "selectAll": "Select All",
+    "settings": "Settings",
+    "shortcuts": "Keyboard Shortcuts",
+    "language": "Language",
+    "help": "Help",
+    "about": "About"
+  },
+  "notifications": {
+    "invalidText": "This text type cannot be pinned! Please copy a normal text.",
+    "copyFailed": "Copy operation failed or no text was selected!",
+    "pinned": "Text \"{text}\" was pinned to position {position} and copied to the clipboard.",
+    "pasted": "Text \"{text}\" was pasted.",
+    "alreadyRunning": "The application is already running! The existing window has been brought to front."
+  },
+  "main": {
+    "clearAll": "Clear All",
+    "noItems": "No items yet",
+    "pin": "Pin",
+    "unpin": "Unpin",
+    "delete": "Delete",
+    "copy": "Copy"
+  },
+  "shortcuts": {
+    "title": "Keyboard Shortcuts Settings",
+    "visibility": "Application Visibility",
+    "visibilityDesc": "Shortcut key used to show/hide the application",
+    "modifier": "Modifier Key",
+    "key": "Key",
+    "pasteShortcuts": "Paste Text Keys",
+    "pasteDesc": "Key combination used to paste saved texts. Combined with numbers (1-9) (e.g., Ctrl+1, Ctrl+2, etc.)",
+    "pinShortcuts": "Pin Text Keys",
+    "pinDesc": "Key combination used to pin texts to specific positions. Combined with numbers (1-9) (e.g., Ctrl+Shift+1, Ctrl+Shift+2, etc.)",
+    "warning": "Note: Don't choose the same shortcut keys for pasting and pinning!",
+    "preview": "Preview",
+    "reset": "Reset to Default",
+    "cancel": "Cancel",
+    "save": "Save",
+    "resetConfirm": "All shortcut keys will be reset to their default values. Are you sure?",
+    "sameShortcutError": "You must choose different shortcut keys for pasting and pinning!"
+  },
+  "about": {
+    "title": "About MultiCopier",
+    "version": "Version",
+    "developer": "Developer",
+    "author": "Developer",
+    "copyright": "© 2023 MultiCopier",
+    "license": "Distributed under the MIT License",
+    "aboutSectionTitle": "About",
+    "aboutTitle": "About",
+    "description1": "MultiCopier is a modern desktop multiple clipboard application that allows you to store multiple texts in memory and access them quickly using shortcut keys.",
+    "description2": "You can copy, pin, and paste texts anytime using keyboard shortcuts.",
+    "aboutContent": "MultiCopier is a modern desktop multiple clipboard application that allows you to store multiple texts in memory and access them quickly using shortcut keys. You can copy, pin, and paste texts anytime using keyboard shortcuts.",
+    "closeButton": "Close"
+  },
+  "tray": {
+    "show": "Show App",
+    "quit": "Quit"
+  },
+  "language": {
+    "title": "Language Settings",
+    "selectLanguage": "Select Language",
+    "tr": "Turkish",
+    "en": "English",
+    "restart": "You may need to restart the application for the changes to fully take effect.",
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "ui": {
+    "statusBadge": "Auto-Copy Active",
+    "notice": "Note: Shortcuts like Ctrl+1, Ctrl+2 copy text to clipboard and automatically paste it.",
+    "addCurrentSelection": "Add Current Selection",
+    "emptyStateTitle": "No clipboard items yet.",
+    "emptyStateDesc": "When you copy text (Ctrl+C), it will be automatically added here.",
+    "shortcutsTitle": "Shortcuts",
+    "pinningSectionTitle": "Pinning Feature",
+    "autopasteSectionTitle": "Auto-Paste Feature",
+    "dataSectionTitle": "Data Storage",
+    "noClipboardText": "No text found in clipboard.",
+    "confirmClearAll": "Are you sure you want to delete all copied items?",
+    "copiedToClipboard": "Copied to clipboard! (You can paste with Ctrl+V)",
+    
+    "shortcutAppVisibility": "Show/hide application",
+    "shortcutAutoAdd": "Automatically adds text to the list",
+    "shortcutAutoPaste": "Automatically pastes the selected item",
+    "shortcutPinText": "Pins the last copied text to the corresponding position",
+    "shortcutWith": "to",
+    
+    "pinningDesc1": "You can pin texts to a specific position. Pinned items remain at the same position even when new items are added or the list is sorted.",
+    "pinningMethodsTitle": "Pinning Methods:",
+    "pinningMethod1": "Click the \"Pin\" button next to an item, or",
+    "pinningMethod2": "First copy text (Ctrl+C) and then use Ctrl+Shift+[1-9] shortcut to pin it to the position of your choice.",
+    "pinningDesc2": "Pinned items are marked with yellow color and 📌 icon.",
+    
+    "autopasteDesc1": "When you use shortcuts from Ctrl+1 to Ctrl+9, the selected text is copied to the clipboard and automatically pasted into the active application.",
+    "autopasteDesc2": "This feature works with Windows keyboard simulation and sends Ctrl+V.",
+    
+    "dataDesc1": "All texts you copy and pin are automatically saved. Your data is preserved even after you close and reopen the application.",
+    "dataDesc2": "Data is stored at: %APPDATA%\\multicopier\\"
+  }
+} 

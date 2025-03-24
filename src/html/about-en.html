@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About MultiCopier</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+      text-align: center;
+    }
+    
+    .about-container {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 5px;
+    }
+    
+    .version {
+      color: #7f8c8d;
+      margin-bottom: 20px;
+    }
+    
+    .description {
+      text-align: left;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    
+    .footer {
+      font-size: 0.9em;
+      color: #7f8c8d;
+      margin-top: 20px;
+    }
+    
+    .close-btn {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    
+    .close-btn:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="about-container">
+    <img src="../assets/icon.png" alt="MultiCopier Logo" width="64" height="64" style="margin-bottom: 15px;">
+    <h1>MultiCopier</h1>
+    <div class="app-description">Modern Clipboard Manager</div>
+    <div class="version-label"><span>Version</span>: <span>1.0.0</span></div>
+    <div class="author-label"><span>Developer</span>: <span>MultiCopier Team</span></div>
+    
+    <div class="description">
+      <div class="about-section-title">About</div>
+      <div class="about-section-content">
+        <p>MultiCopier is a modern desktop multiple clipboard application that allows you to store multiple texts in memory and access them quickly using shortcut keys.</p>
+        
+        <p>You can copy, pin, and paste texts anytime using keyboard shortcuts.</p>
+      </div>
+    </div>
+    
+    <button id="close-btn" class="close-btn" onclick="window.close()">Close</button>
+    
+    <div class="footer">
+      <div class="copyright">&copy; 2025 MultiCopier</div>
+      <div class="license">Distributed under the MIT License</div>
+    </div>
+  </div>
+  
+  <script src="about-i18n.js"></script>
+</body>
+</html> 

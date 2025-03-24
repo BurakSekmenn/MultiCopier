@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kısayol Tuşları Ayarları</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    
+    .settings-container {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .setting-group {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .setting-group:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .setting-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+    
+    .setting-description {
+      font-size: 0.9em;
+      color: #7f8c8d;
+      margin-bottom: 15px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background-color: #fff;
+      margin-bottom: 15px;
+    }
+    
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+    
+    button {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+    
+    .save-btn {
+      background-color: #2ecc71;
+      color: white;
+      margin-left: 10px;
+    }
+    
+    .save-btn:hover {
+      background-color: #27ae60;
+    }
+    
+    .cancel-btn {
+      background-color: #e74c3c;
+      color: white;
+    }
+    
+    .cancel-btn:hover {
+      background-color: #c0392b;
+    }
+    
+    .reset-btn {
+      background-color: #3498db;
+      color: white;
+      margin-right: auto;
+    }
+    
+    .reset-btn:hover {
+      background-color: #2980b9;
+    }
+    
+    .preview {
+      font-family: monospace;
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      margin-top: 5px;
+    }
+    
+    .warning {
+      color: #e74c3c;
+      font-size: 0.9em;
+      margin-top: 5px;
+    }
+    
+    .setting-option {
+      margin-bottom: 15px;
+    }
+    
+    .checkbox-label {
+      display: inline-block;
+      margin-left: 5px;
+      font-weight: normal;
+    }
+    
+    .setting-hint {
+      font-size: 0.8em;
+      color: #7f8c8d;
+      margin-top: 5px;
+    }
+    
+    #max-items {
+      width: 80px;
+    }
+    
+    #notification-duration {
+      width: 80px;
+    }
+  </style>
+</head>
+<body>
+  <div class="settings-container">
+    <h1 id="shortcut-title">Kısayol Tuşları Ayarları</h1>
+    
+    <div class="setting-group">
+      <div class="setting-title" id="visibility-title">Uygulama Görünürlüğü</div>
+      <div class="setting-description" id="visibility-desc">
+        Uygulamayı açmak/gizlemek için kullanılan kısayol tuşu
+      </div>
+      
+      <label for="toggle-modifier" id="toggle-modifier-label">Değiştirici Tuş</label>
+      <select id="toggle-modifier">
+        <option value="CommandOrControl+">Ctrl (Windows) / Command (Mac)</option>
+        <option value="Alt+">Alt</option>
+        <option value="Shift+">Shift</option>
+        <option value="CommandOrControl+Alt+">Ctrl+Alt / Command+Option</option>
+        <option value="CommandOrControl+Shift+">Ctrl+Shift / Command+Shift</option>
+        <option value="Alt+Shift+">Alt+Shift</option>
+      </select>
+      
+      <label for="toggle-key" id="toggle-key-label">Tuş</label>
+      <select id="toggle-key">
+        <option value="Q">Q</option>
+        <option value="W">W</option>
+        <option value="E">E</option>
+        <option value="R">R</option>
+        <option value="T">T</option>
+        <option value="Y">Y</option>
+        <option value="U">U</option>
+        <option value="I">I</option>
+        <option value="O">O</option>
+        <option value="P">P</option>
+        <option value="A">A</option>
+        <option value="S">S</option>
+        <option value="D">D</option>
+        <option value="F">F</option>
+        <option value="G">G</option>
+        <option value="H">H</option>
+        <option value="J">J</option>
+        <option value="K">K</option>
+        <option value="L">L</option>
+        <option value="Z">Z</option>
+        <option value="X">X</option>
+        <option value="C">C</option>
+        <option value="V">V</option>
+        <option value="B">B</option>
+        <option value="N">N</option>
+        <option value="M">M</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="F1">F1</option>
+        <option value="F2">F2</option>
+        <option value="F3">F3</option>
+        <option value="F4">F4</option>
+        <option value="F5">F5</option>
+        <option value="F6">F6</option>
+        <option value="F7">F7</option>
+        <option value="F8">F8</option>
+        <option value="F9">F9</option>
+        <option value="F10">F10</option>
+        <option value="F11">F11</option>
+        <option value="F12">F12</option>
+      </select>
+      
+      <div class="preview">
+        <span id="preview-label">Önizleme</span>: <span id="toggle-preview">Ctrl+Q</span>
+      </div>
+    </div>
+    
+    <div class="setting-group">
+      <div class="setting-title" id="paste-title">Metni Yapıştırma Tuşları</div>
+      <div class="setting-description" id="paste-desc">
+        Kaydedilmiş metinleri yapıştırmak için kullanılan tuş kombinasyonu.
+        Sayılarla (1-9) birleştirilir (örn: Ctrl+1, Ctrl+2, vb.)
+      </div>
+      
+      <label for="paste-prefix" id="paste-prefix-label">Değiştirici Tuş(lar)</label>
+      <select id="paste-prefix">
+        <option value="CommandOrControl+">Ctrl (Windows) / Command (Mac)</option>
+        <option value="Alt+">Alt</option>
+        <option value="Shift+">Shift</option>
+        <option value="CommandOrControl+Alt+">Ctrl+Alt / Command+Option</option>
+        <option value="CommandOrControl+Shift+">Ctrl+Shift / Command+Shift</option>
+        <option value="Alt+Shift+">Alt+Shift</option>
+      </select>
+      
+      <div class="preview">
+        <span id="preview-label-paste">Önizleme</span>: <span id="paste-preview">Ctrl+1, Ctrl+2, ... Ctrl+9</span>
+      </div>
+    </div>
+    
+    <div class="setting-group">
+      <div class="setting-title" id="pin-title">Metni Sabitleme Tuşları</div>
+      <div class="setting-description" id="pin-desc">
+        Metinleri belirli pozisyonlara sabitlemek için kullanılan tuş kombinasyonu.
+        Sayılarla (1-9) birleştirilir (örn: Ctrl+Shift+1, Ctrl+Shift+2, vb.)
+      </div>
+      
+      <label for="pin-prefix" id="pin-prefix-label">Değiştirici Tuş(lar)</label>
+      <select id="pin-prefix">
+        <option value="CommandOrControl+">Ctrl (Windows) / Command (Mac)</option>
+        <option value="Alt+">Alt</option>
+        <option value="Shift+">Shift</option>
+        <option value="CommandOrControl+Alt+">Ctrl+Alt / Command+Option</option>
+        <option value="CommandOrControl+Shift+">Ctrl+Shift / Command+Shift</option>
+        <option value="Alt+Shift+">Alt+Shift</option>
+      </select>
+      
+      <div class="preview">
+        <span id="preview-label-pin">Önizleme</span>: <span id="pin-preview">Ctrl+Shift+1, Ctrl+Shift+2, ... Ctrl+Shift+9</span>
+      </div>
+      
+      <div class="warning" id="warning-text">
+        Not: Yapıştırma ve sabitleme için aynı kısayol tuşlarını seçmeyin!
+      </div>
+    </div>
+    
+    <!-- Yeni Ayarlar Grubu: Genel Ayarlar -->
+    <div class="setting-group">
+      <div class="setting-title" id="general-title">Genel Ayarlar</div>
+      <div class="setting-description" id="general-desc">
+        Uygulamanın çalışmasını özelleştirin
+      </div>
+      
+      <!-- Otomatik Başlatma Seçeneği -->
+      <div class="setting-option">
+        <input type="checkbox" id="startup-checkbox" />
+        <label for="startup-checkbox" id="startup-label" class="checkbox-label">Bilgisayar açıldığında otomatik başlat</label>
+      </div>
+      
+      <!-- Sistem Tepsisine Küçültme Seçeneği -->
+      <div class="setting-option">
+        <input type="checkbox" id="tray-minimize-checkbox" />
+        <label for="tray-minimize-checkbox" id="tray-minimize-label" class="checkbox-label">Kapatma düğmesine basıldığında sistem tepsisine küçült</label>
+      </div>
+      
+      <!-- Maksimum Pano Öğesi Sayısı -->
+      <div class="setting-option">
+        <label for="max-items" id="max-items-label">Maksimum pano öğesi sayısı</label>
+        <select id="max-items">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="50">50</option>
+        </select>
+        <div class="setting-hint" id="max-items-hint">Sabitlenmiş öğeler bu limite dahil değildir</div>
+      </div>
+    </div>
+    
+    <!-- Yeni Ayarlar Grubu: Görünüm Ayarları -->
+    <div class="setting-group">
+      <div class="setting-title" id="appearance-title">Görünüm Ayarları</div>
+      <div class="setting-description" id="appearance-desc">
+        Uygulamanın görsel arayüzünü özelleştirin
+      </div>
+      
+      <!-- Tema Seçimi -->
+      <div class="setting-option">
+        <label for="theme-select" id="theme-label">Tema</label>
+        <select id="theme-select">
+          <option value="system">Sistem ayarlarını kullan</option>
+          <option value="light">Açık tema</option>
+          <option value="dark">Koyu tema</option>
+        </select>
+      </div>
+      
+      <!-- Transparan Arka Plan -->
+      <div class="setting-option">
+        <input type="checkbox" id="transparent-bg-checkbox" />
+        <label for="transparent-bg-checkbox" id="transparent-bg-label" class="checkbox-label">Transparan arka plan</label>
+      </div>
+      
+      <!-- Yazı Tipi Boyutu -->
+      <div class="setting-option">
+        <label for="font-size" id="font-size-label">Yazı tipi boyutu</label>
+        <select id="font-size">
+          <option value="small">Küçük</option>
+          <option value="medium">Orta</option>
+          <option value="large">Büyük</option>
+        </select>
+      </div>
+    </div>
+    
+    <!-- Yeni Ayarlar Grubu: Bildirim Ayarları -->
+    <div class="setting-group">
+      <div class="setting-title" id="notification-title">Bildirim Ayarları</div>
+      <div class="setting-description" id="notification-desc">
+        Uygulama bildirimlerini özelleştirin
+      </div>
+      
+      <!-- Bildirim Gösterme Seçeneği -->
+      <div class="setting-option">
+        <input type="checkbox" id="show-notifications-checkbox" checked />
+        <label for="show-notifications-checkbox" id="show-notifications-label" class="checkbox-label">Bildirimleri göster</label>
+      </div>
+      
+      <!-- Bildirim Ses Seçeneği -->
+      <div class="setting-option">
+        <input type="checkbox" id="notification-sound-checkbox" checked />
+        <label for="notification-sound-checkbox" id="notification-sound-label" class="checkbox-label">Bildirim sesi çal</label>
+      </div>
+      
+      <!-- Bildirim Süresi -->
+      <div class="setting-option">
+        <label for="notification-duration" id="notification-duration-label">Bildirim süresi (saniye)</label>
+        <select id="notification-duration">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="buttons">
+      <button class="reset-btn" id="reset-btn">Varsayılana Sıfırla</button>
+      <button class="cancel-btn" id="cancel-btn">İptal</button>
+      <button class="save-btn" id="save-btn">Kaydet</button>
+    </div>
+  </div>
+  
+  <script>
+    const { ipcRenderer } = require('electron');
+    
+    // Form elementleri
+    const toggleModifier = document.getElementById('toggle-modifier');
+    const toggleKey = document.getElementById('toggle-key');
+    const pastePrefix = document.getElementById('paste-prefix');
+    const pinPrefix = document.getElementById('pin-prefix');
+    
+    // Yeni form elementleri
+    const startupCheckbox = document.getElementById('startup-checkbox');
+    const trayMinimizeCheckbox = document.getElementById('tray-minimize-checkbox');
+    const maxItems = document.getElementById('max-items');
+    const themeSelect = document.getElementById('theme-select');
+    const transparentBgCheckbox = document.getElementById('transparent-bg-checkbox');
+    const fontSizeSelect = document.getElementById('font-size');
+    const showNotificationsCheckbox = document.getElementById('show-notifications-checkbox');
+    const notificationSoundCheckbox = document.getElementById('notification-sound-checkbox');
+    const notificationDuration = document.getElementById('notification-duration');
+    
+    // Önizleme elementleri
+    const togglePreview = document.getElementById('toggle-preview');
+    const pastePreview = document.getElementById('paste-preview');
+    const pinPreview = document.getElementById('pin-preview');
+    
+    // Butonlar
+    const resetBtn = document.getElementById('reset-btn');
+    const cancelBtn = document.getElementById('cancel-btn');
+    const saveBtn = document.getElementById('save-btn');
+    
+    // Dil çevirileri için UI elementleri
+    const shortcutTitle = document.getElementById('shortcut-title');
+    const visibilityTitle = document.getElementById('visibility-title');
+    const visibilityDesc = document.getElementById('visibility-desc');
+    const toggleModifierLabel = document.getElementById('toggle-modifier-label');
+    const toggleKeyLabel = document.getElementById('toggle-key-label');
+    const previewLabel = document.getElementById('preview-label');
+    const previewLabelPaste = document.getElementById('preview-label-paste');
+    const previewLabelPin = document.getElementById('preview-label-pin');
+    const pasteTitle = document.getElementById('paste-title');
+    const pasteDesc = document.getElementById('paste-desc');
+    const pastePrefixLabel = document.getElementById('paste-prefix-label');
+    const pinTitle = document.getElementById('pin-title');
+    const pinDesc = document.getElementById('pin-desc');
+    const pinPrefixLabel = document.getElementById('pin-prefix-label');
+    const warningText = document.getElementById('warning-text');
+    
+    // Yeni UI elementleri için çeviri değişkenleri
+    const generalTitle = document.getElementById('general-title');
+    const generalDesc = document.getElementById('general-desc');
+    const startupLabel = document.getElementById('startup-label');
+    const trayMinimizeLabel = document.getElementById('tray-minimize-label');
+    const maxItemsLabel = document.getElementById('max-items-label');
+    const maxItemsHint = document.getElementById('max-items-hint');
+    const appearanceTitle = document.getElementById('appearance-title');
+    const appearanceDesc = document.getElementById('appearance-desc');
+    const themeLabel = document.getElementById('theme-label');
+    const transparentBgLabel = document.getElementById('transparent-bg-label');
+    const fontSizeLabel = document.getElementById('font-size-label');
+    const notificationTitle = document.getElementById('notification-title');
+    const notificationDesc = document.getElementById('notification-desc');
+    const showNotificationsLabel = document.getElementById('show-notifications-label');
+    const notificationSoundLabel = document.getElementById('notification-sound-label');
+    const notificationDurationLabel = document.getElementById('notification-duration-label');
+    
+    // CSS ekleme
+    const style = document.createElement('style');
+    style.innerHTML = `
+      .setting-option {
+        margin-bottom: 15px;
+      }
+      
+      .checkbox-label {
+        display: inline-block;
+        margin-left: 5px;
+        font-weight: normal;
+      }
+      
+      .setting-hint {
+        font-size: 0.8em;
+        color: #7f8c8d;
+        margin-top: 5px;
+      }
+      
+      #max-items {
+        width: 80px;
+      }
+      
+      #notification-duration {
+        width: 80px;
+      }
+    `;
+    document.head.appendChild(style);
+    
+    // Varsayılan ayarlar
+    const defaultConfig = {
+      toggleAppVisibility: 'CommandOrControl+Q',
+      pastePrefix: 'CommandOrControl+',
+      pinPrefix: 'CommandOrControl+Shift+',
+      // Yeni varsayılan ayarlar
+      startOnBoot: false,
+      minimizeToTray: true,
+      maxClipboardItems: 9,
+      theme: 'system',
+      transparentBackground: false,
+      fontSize: 'medium',
+      showNotifications: true,
+      notificationSound: true,
+      notificationDuration: 3
+    };
+    
+    // Mevcut ayarları tutacak değişken
+    let currentConfig = {...defaultConfig};
+    
+    // Çeviri verilerini tutacak değişken
+    let translations = {};
+    
+    // Kısayol tuşu görüntüleme yardımcı fonksiyonu
+    function formatShortcut(shortcut) {
+      return shortcut
+        .replace('CommandOrControl+', 'Ctrl+')
+        .replace('Alt+', 'Alt+')
+        .replace('Shift+', 'Shift+');
+    }
+    
+    // Önizlemeleri güncelle
+    function updatePreviews() {
+      togglePreview.textContent = formatShortcut(toggleModifier.value + toggleKey.value);
+      
+      // Yapıştırma önizlemesini güncelle (1-9 arası tüm değerler)
+      let pasteText = '';
+      for (let i = 1; i <= 9; i++) {
+        if (i > 1) pasteText += ', ';
+        pasteText += formatShortcut(pastePrefix.value + i);
+      }
+      pastePreview.textContent = pasteText;
+      
+      // Sabitleme önizlemesini güncelle (1-9 arası tüm değerler)
+      let pinText = '';
+      for (let i = 1; i <= 9; i++) {
+        if (i > 1) pinText += ', ';
+        pinText += formatShortcut(pinPrefix.value + i);
+      }
+      pinPreview.textContent = pinText;
+      
+      // Eğer yapıştırma ve sabitleme tuşları aynıysa uyarı göster
+      if (pastePrefix.value === pinPrefix.value) {
+        pinPrefix.style.borderColor = '#e74c3c';
+        document.querySelector('.warning').style.display = 'block';
+      } else {
+        pinPrefix.style.borderColor = '#ddd';
+        document.querySelector('.warning').style.display = 'none';
+      }
+    }
+    
+    // Ayarları form elemanlarına yükle
+    function loadConfigToForm(config) {
+      // Uygulama görünürlüğü kısayol tuşunu parçalara ayır
+      const toggleParts = config.toggleAppVisibility.split('+');
+      const toggleKeyValue = toggleParts.pop(); // Son eleman tuş değeri
+      const toggleModifierValue = config.toggleAppVisibility.substring(0, config.toggleAppVisibility.length - toggleKeyValue.length);
+      
+      // Form değerlerini ayarla
+      toggleModifier.value = toggleModifierValue;
+      toggleKey.value = toggleKeyValue;
+      pastePrefix.value = config.pastePrefix;
+      pinPrefix.value = config.pinPrefix;
+      
+      // Yeni ayarları forma yükle
+      startupCheckbox.checked = config.startOnBoot || false;
+      trayMinimizeCheckbox.checked = config.minimizeToTray || true;
+      maxItems.value = config.maxClipboardItems || 9;
+      themeSelect.value = config.theme || 'system';
+      transparentBgCheckbox.checked = config.transparentBackground || false;
+      fontSizeSelect.value = config.fontSize || 'medium';
+      showNotificationsCheckbox.checked = config.showNotifications !== false; // Varsayılan olarak true
+      notificationSoundCheckbox.checked = config.notificationSound !== false; // Varsayılan olarak true
+      notificationDuration.value = config.notificationDuration || 3;
+      
+      // Önizlemeleri güncelle
+      updatePreviews();
+    }
+    
+    // Form değerlerinden yapılandırma oluştur
+    function getConfigFromForm() {
+      return {
+        toggleAppVisibility: toggleModifier.value + toggleKey.value,
+        pastePrefix: pastePrefix.value,
+        pinPrefix: pinPrefix.value,
+        // Yeni ayarlar
+        startOnBoot: startupCheckbox.checked,
+        minimizeToTray: trayMinimizeCheckbox.checked,
+        maxClipboardItems: parseInt(maxItems.value),
+        theme: themeSelect.value,
+        transparentBackground: transparentBgCheckbox.checked,
+        fontSize: fontSizeSelect.value,
+        showNotifications: showNotificationsCheckbox.checked,
+        notificationSound: notificationSoundCheckbox.checked,
+        notificationDuration: parseInt(notificationDuration.value)
+      };
+    }
+    
+    // UI metinlerini güncelle
+    function updateUI(data) {
+      translations = data;
+      
+      // Sayfa başlığı
+      document.title = data.title;
+      shortcutTitle.textContent = data.title;
+      
+      // Uygulama görünürlüğü bölümü
+      visibilityTitle.textContent = data.visibility;
+      visibilityDesc.textContent = data.visibilityDesc;
+      toggleModifierLabel.textContent = data.modifier;
+      toggleKeyLabel.textContent = data.key;
+      
+      // Yapıştırma bölümü
+      pasteTitle.textContent = data.pasteShortcuts;
+      pasteDesc.textContent = data.pasteDesc;
+      pastePrefixLabel.textContent = data.modifier;
+      
+      // Sabitleme bölümü
+      pinTitle.textContent = data.pinShortcuts;
+      pinDesc.textContent = data.pinDesc;
+      pinPrefixLabel.textContent = data.modifier;
+      
+      // Yeni eklenen bölümler için çeviriler
+      generalTitle.textContent = data.generalTitle || 'Genel Ayarlar';
+      generalDesc.textContent = data.generalDesc || 'Uygulamanın çalışmasını özelleştirin';
+      startupLabel.textContent = data.startupLabel || 'Bilgisayar açıldığında otomatik başlat';
+      trayMinimizeLabel.textContent = data.trayMinimizeLabel || 'Kapatma düğmesine basıldığında sistem tepsisine küçült';
+      maxItemsLabel.textContent = data.maxItemsLabel || 'Maksimum pano öğesi sayısı';
+      maxItemsHint.textContent = data.maxItemsHint || 'Sabitlenmiş öğeler bu limite dahil değildir';
+      
+      appearanceTitle.textContent = data.appearanceTitle || 'Görünüm Ayarları';
+      appearanceDesc.textContent = data.appearanceDesc || 'Uygulamanın görsel arayüzünü özelleştirin';
+      themeLabel.textContent = data.themeLabel || 'Tema';
+      transparentBgLabel.textContent = data.transparentBgLabel || 'Transparan arka plan';
+      fontSizeLabel.textContent = data.fontSizeLabel || 'Yazı tipi boyutu';
+      
+      notificationTitle.textContent = data.notificationTitle || 'Bildirim Ayarları';
+      notificationDesc.textContent = data.notificationDesc || 'Uygulama bildirimlerini özelleştirin';
+      showNotificationsLabel.textContent = data.showNotificationsLabel || 'Bildirimleri göster';
+      notificationSoundLabel.textContent = data.notificationSoundLabel || 'Bildirim sesi çal';
+      notificationDurationLabel.textContent = data.notificationDurationLabel || 'Bildirim süresi (saniye)';
+      
+      // Önizleme ve uyarı
+      previewLabel.textContent = data.preview;
+      previewLabelPaste.textContent = data.preview;
+      previewLabelPin.textContent = data.preview;
+      warningText.textContent = data.warning;
+      
+      // Butonlar
+      resetBtn.textContent = data.reset;
+      cancelBtn.textContent = data.cancel;
+      saveBtn.textContent = data.save;
+    }
+    
+    // Dil ayarlarını dinle ve HTML lang özelliğini ayarla
+    function updateHtmlLang(language) {
+      document.documentElement.setAttribute('lang', language);
+      console.log(`HTML lang özelliği ${language} olarak ayarlandı`);
+    }
+    
+    // Çeviri verilerini al
+    ipcRenderer.send('get-shortcuts-translations');
+    
+    // Çeviriler geldiğinde
+    ipcRenderer.on('shortcuts-translations', (event, data) => {
+      updateUI(data);
+      
+      // Mevcut dili al
+      ipcRenderer.send('get-language-config');
+    });
+    
+    // Dil bilgisi geldiğinde HTML lang özelliğini ayarla
+    ipcRenderer.on('language-list', (event, { languages, currentLanguage }) => {
+      updateHtmlLang(currentLanguage);
+    });
+    
+    // Dil değişikliği olduğunda
+    ipcRenderer.on('language-changed', (event, language) => {
+      // HTML lang özelliğini güncelle
+      updateHtmlLang(language);
+      
+      // Dil yapılandırmasını yeniden al
+      ipcRenderer.send('get-shortcuts-translations');
+      console.log(`Dil ${language} olarak değiştirildi, çeviriler yenileniyor`);
+    });
+    
+    // Değişiklikleri dinle
+    toggleModifier.addEventListener('change', updatePreviews);
+    toggleKey.addEventListener('change', updatePreviews);
+    pastePrefix.addEventListener('change', updatePreviews);
+    pinPrefix.addEventListener('change', updatePreviews);
+    
+    // Ana süreçten kısayol yapılandırmasını al
+    ipcRenderer.send('get-shortcuts-config');
+    
+    // Ana süreçten yapılandırma alındığında
+    ipcRenderer.on('shortcuts-config', (event, config) => {
+      currentConfig = {...defaultConfig, ...config};
+      loadConfigToForm(currentConfig);
+    });
+    
+    // Bildirimleri gizle/göster davranışını güncelle
+    showNotificationsCheckbox.addEventListener('change', () => {
+      const isEnabled = showNotificationsCheckbox.checked;
+      notificationSoundCheckbox.disabled = !isEnabled;
+      notificationDuration.disabled = !isEnabled;
+    });
+    
+    // Kaydetme butonu
+    saveBtn.addEventListener('click', () => {
+      // Form değerlerinden yapılandırmayı al
+      const newConfig = getConfigFromForm();
+      
+      // Yapıştırma ve sabitleme tuşları aynıysa kaydet butonu devre dışı bırak
+      if (newConfig.pastePrefix === newConfig.pinPrefix) {
+        alert(translations.sameShortcutError || 'Yapıştırma ve sabitleme için farklı kısayol tuşları seçmelisiniz!');
+        return;
+      }
+      
+      // Ana sürece yeni yapılandırmayı gönder
+      ipcRenderer.send('update-shortcuts-config', newConfig);
+      
+      // Pencereyi kapat
+      window.close();
+    });
+    
+    // İptal butonu
+    cancelBtn.addEventListener('click', () => {
+      window.close();
+    });
+    
+    // Sıfırlama butonu
+    resetBtn.addEventListener('click', () => {
+      if (confirm(translations.resetConfirm || 'Tüm kısayol tuşları varsayılan değerlerine sıfırlanacak. Emin misiniz?')) {
+        loadConfigToForm(defaultConfig);
+      }
+    });
+  </script>
+</body>
+</html> 

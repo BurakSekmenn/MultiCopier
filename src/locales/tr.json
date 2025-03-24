@@ -1,0 +1,117 @@
+{
+  "app": {
+    "title": "MultiCopier",
+    "description": "Modern çoklu kopyalama uygulaması"
+  },
+  "menu": {
+    "file": "Dosya",
+    "exit": "Çıkış",
+    "edit": "Düzenle",
+    "cut": "Kes",
+    "copy": "Kopyala",
+    "paste": "Yapıştır",
+    "selectAll": "Tümünü Seç",
+    "settings": "Ayarlar",
+    "shortcuts": "Kısayol Tuşları",
+    "language": "Dil",
+    "help": "Yardım",
+    "about": "Hakkında"
+  },
+  "notifications": {
+    "copied": "Panoya kopyalandı!",
+    "deleted": "Öğe silindi",
+    "cleared": "Tüm liste temizlendi",
+    "pinned": "\"{text}\" metni Ctrl+{position} pozisyonuna sabitlendi!",
+    "alreadyPinned": "\"{text}\" metni zaten {position} pozisyonunda sabitlenmiş!",
+    "unpinned": "Sabitleme kaldırıldı",
+    "pasted": "\"{text}\" metni yapıştırıldı",
+    "copyFailed": "Kopyalama başarısız oldu",
+    "invalidText": "Bu içerik sabitlenemez",
+    "alreadyRunning": "Uygulama zaten çalışıyor! Mevcut pencere öne getirildi."
+  },
+  "main": {
+    "clearAll": "Tümünü Temizle",
+    "noItems": "Henüz öğe yok",
+    "pin": "Sabitle",
+    "unpin": "Sabitlemeyi Kaldır",
+    "delete": "Sil",
+    "copy": "Kopyala"
+  },
+  "shortcuts": {
+    "title": "Kısayol Tuşları Ayarları",
+    "visibility": "Uygulama Görünürlüğü",
+    "visibilityDesc": "Uygulamayı açmak/gizlemek için kullanılan kısayol tuşu",
+    "modifier": "Değiştirici Tuş",
+    "key": "Tuş",
+    "pasteShortcuts": "Metni Yapıştırma Tuşları",
+    "pasteDesc": "Kaydedilmiş metinleri yapıştırmak için kullanılan tuş kombinasyonu. Sayılarla (1-9) birleştirilir (örn: Ctrl+1, Ctrl+2, vb.)",
+    "pinShortcuts": "Metni Sabitleme Tuşları",
+    "pinDesc": "Metinleri belirli pozisyonlara sabitlemek için kullanılan tuş kombinasyonu. Sayılarla (1-9) birleştirilir (örn: Ctrl+Shift+1, Ctrl+Shift+2, vb.)",
+    "warning": "Not: Yapıştırma ve sabitleme için aynı kısayol tuşlarını seçmeyin!",
+    "preview": "Önizleme",
+    "reset": "Varsayılana Sıfırla",
+    "cancel": "İptal",
+    "save": "Kaydet",
+    "resetConfirm": "Tüm kısayol tuşları varsayılan değerlerine sıfırlanacak. Emin misiniz?",
+    "sameShortcutError": "Yapıştırma ve sabitleme için farklı kısayol tuşları seçmelisiniz!"
+  },
+  "about": {
+    "title": "MultiCopier Hakkında",
+    "version": "Sürüm",
+    "developer": "Geliştirici",
+    "author": "Geliştirici",
+    "copyright": "© 2023 MultiCopier",
+    "license": "MIT lisansı altında dağıtılmaktadır.",
+    "aboutSectionTitle": "Hakkında",
+    "aboutTitle": "Hakkında",
+    "description1": "MultiCopier, birden fazla metni hafızada tutup, kısayol tuşları ile hızlıca erişmenizi sağlayan modern bir çoklu kopyalama masaüstü uygulamasıdır.",
+    "description2": "Kısayol tuşlarını kullanarak metinleri kopyalayabilir, sabitleyebilir ve istediğiniz zaman yapıştırabilirsiniz.",
+    "aboutContent": "MultiCopier, birden fazla metni hafızada tutup, kısayol tuşları ile hızlıca erişmenizi sağlayan modern bir çoklu kopyalama masaüstü uygulamasıdır. Kısayol tuşlarını kullanarak metinleri kopyalayabilir, sabitleyebilir ve istediğiniz zaman yapıştırabilirsiniz.",
+    "closeButton": "Kapat"
+  },
+  "tray": {
+    "show": "Uygulamayı Göster",
+    "quit": "Çıkış"
+  },
+  "language": {
+    "title": "Dil Ayarları",
+    "selectLanguage": "Dil Seçin",
+    "tr": "Türkçe",
+    "en": "İngilizce",
+    "restart": "Değişikliklerin tam olarak uygulanması için uygulamayı yeniden başlatmanız gerekebilir.",
+    "save": "Kaydet",
+    "cancel": "İptal"
+  },
+  "ui": {
+    "statusBadge": "Otomatik Kopyalama Aktif",
+    "notice": "Not: Ctrl+1, Ctrl+2 gibi kısayollar metni panoya kopyalar ve otomatik olarak yapıştırır.",
+    "addCurrentSelection": "Şu anki seçimi ekle",
+    "emptyStateTitle": "Henüz kopyalanmış öğe yok.",
+    "emptyStateDesc": "Bir metin kopyaladığınızda (Ctrl+C) otomatik olarak buraya eklenecektir.",
+    "shortcutsTitle": "Kısayollar",
+    "pinningSectionTitle": "Sabitleme Özelliği",
+    "autopasteSectionTitle": "Otomatik Yapıştırma",
+    "dataSectionTitle": "Veri Saklama",
+    "noClipboardText": "Panoda kopyalanmış metin bulunamadı.",
+    "confirmClearAll": "Tüm kopyalanmış öğeleri silmek istediğinize emin misiniz?",
+    "copiedToClipboard": "Panoya kopyalandı! (Ctrl+V ile yapıştırabilirsiniz)",
+    
+    "shortcutAppVisibility": "Uygulamayı aç/kapat",
+    "shortcutAutoAdd": "Metni otomatik olarak listeye ekler",
+    "shortcutAutoPaste": "Seçili öğeyi otomatik olarak yapıştırır",
+    "shortcutPinText": "Panoda en son kopyalanan metni ilgili pozisyona sabitler",
+    "shortcutWith": "ile",
+    
+    "pinningDesc1": "Metinleri belirli bir pozisyona sabitleyebilirsiniz. Sabitlenen öğeler, yeni öğeler eklendiğinde veya liste sıralandığında bile aynı pozisyonda kalır.",
+    "pinningMethodsTitle": "Sabitleme Yöntemleri:",
+    "pinningMethod1": "Öğenin yanındaki \"Sabitle\" butonuna tıklayın, veya",
+    "pinningMethod2": "Önce bir metin kopyalayın (Ctrl+C) ve sonra Ctrl+Shift+[1-9] kısayolunu kullanarak seçtiğiniz pozisyona sabitleyin.",
+    "pinningDesc2": "Sabitlenmiş öğeler sarı renkle ve 📌 simgesiyle işaretlenir.",
+    
+    "autopasteDesc1": "Ctrl+1 ile Ctrl+9 arası kısayolları kullandığınızda, seçili metin panoya kopyalanır ve otomatik olarak aktif uygulamaya yapıştırılır.",
+    "autopasteDesc2": "Bu özellik Windows'un klavye simülasyonu ile çalışır ve Ctrl+V gönderir.",
+    
+    "dataDesc1": "Kopyaladığınız ve sabitlediğiniz tüm metinler otomatik olarak kaydedilir. Uygulamayı kapatıp açtığınızda bile verileriniz korunur.",
+    "dataDesc2": "Veriler şu konumda saklanır: %APPDATA%\\multicopier\\"
+  }
+} 
