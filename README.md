@@ -71,6 +71,21 @@ npm run build
 - Verilerin yerel depolanması için JSON dosyaları kullanılır
 - Windows için özelleştirilmiş kısayol tuşu mekanizması
 
+## Ekran Görüntüleri
+
+Aşağıda uygulamanın bazı ekran görüntüleri bulunmaktadır:
+
+### Ana Ekran
+![Ana Ekran](https://raw.githubusercontent.com/BurakSekmenn/MultiCopier/refs/heads/main/src/screenshot/screenshotanasayfa.png)
+
+### Dil Menüsü
+![Dil](https://raw.githubusercontent.com/BurakSekmenn/MultiCopier/refs/heads/main/src/screenshot/screenshotdil.png)
+
+
+### Kısa Yol Menüsü
+![Kısa Yol](https://raw.githubusercontent.com/BurakSekmenn/MultiCopier/refs/heads/main/src/screenshot/screenshotkisayol.png)
+
+
 ## Lisans
 
 MIT 
